@@ -4,14 +4,19 @@
     <router-link to="/main">首页</router-link>
     <h2>{{ $store.state.name }}</h2>
     <router-view></router-view>
+    <el-button type="danger">jjj</el-button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { ElButton } from 'element-plus'
 
 export default defineComponent({
   name: 'App',
+  components: {
+    ElButton
+  },
   setup() {
     console.log(111)
   }
