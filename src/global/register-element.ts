@@ -1,5 +1,6 @@
 import { App } from 'vue'
 import 'element-plus/dist/index.css'
+
 import {
   ElAlert,
   ElAside,
@@ -8,7 +9,8 @@ import {
   ElFormItem,
   ElInput,
   ElRadio
-} from 'element-plus'
+} from 'element-plus/lib/components'
+
 const components = [
   ElAlert,
   ElAside,
