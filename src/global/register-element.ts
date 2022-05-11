@@ -8,10 +8,14 @@ import {
   ElForm,
   ElFormItem,
   ElInput,
-  ElRadio
+  ElRadio,
+  ElCol,
+  ElAvatar
 } from 'element-plus/lib/components'
 
 const components = [
+  ElCol,
+  ElAvatar,
   ElAlert,
   ElAside,
   ElButton,
