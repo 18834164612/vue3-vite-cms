@@ -29,7 +29,7 @@ class HYRequest {
     //添加所有实例的拦截器
     this.instance.interceptors.request.use(
       (config) => {
-        console.log('所有实例都有的拦截器')
+        // console.log('所有实例都有的拦截器')
         if (this.showLoading) {
           const loading = ElLoading.service({
             lock: true,
@@ -50,11 +50,11 @@ class HYRequest {
       (res) => {
         const data = res.data
         if (data.returnCode === '-1010') {
-          console.log('请求失败')
+          // console.log('请求失败')
         } else {
           return data
         }
-        console.log(data)
+        // console.log(data)
         return res.data
       },
       (err) => {

@@ -1,21 +1,16 @@
 <template>
   <div class="login">
     <login-panel />
-    <login-account />
-    <login-phone />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import LoginPanel from './components/login-panel.vue'
-import LoginAccount from './components/login-account.vue'
-import LoginPhone from './components/login-phone.vue'
+
 export default defineComponent({
   components: {
-    LoginPanel,
-    LoginAccount,
-    LoginPhone
+    LoginPanel
   },
   setup() {
     return {}

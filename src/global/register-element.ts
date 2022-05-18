@@ -12,7 +12,9 @@ import {
   ElCol,
   ElAvatar,
   ElTabs,
-  ElTabPane
+  ElTabPane,
+  ElCheckbox,
+  ElLink
 } from 'element-plus/lib/components'
 
 const components = [
@@ -26,7 +28,9 @@ const components = [
   ElInput,
   ElRadio,
   ElTabs,
-  ElTabPane
+  ElTabPane,
+  ElCheckbox,
+  ElLink
 ]
 export default function (app: App): void {
   for (const component of components) {

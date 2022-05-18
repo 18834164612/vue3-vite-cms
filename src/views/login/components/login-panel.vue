@@ -9,7 +9,7 @@
             <span>{{ '账号登录' }}</span>
           </span>
         </template>
-        {{ '账号登录' }}
+        <login-account ref="accountRef" />
       </el-tab-pane>
       <el-tab-pane>
         <template #label>
@@ -18,18 +18,39 @@
             <span>{{ '手机登录' }}</span>
           </span>
         </template>
-        {{ '手机登录' }}
+        <login-phone />
       </el-tab-pane>
     </el-tabs>
+    <div class="submit">
+      <el-checkbox v-model="isKeepPassword">记住密码</el-checkbox>
+      <el-link style="margin-top: -2px">忘记密码</el-link>
+    </div>
+    <el-button class="login" type="primary" @click="handleClick"
+      >立即登录
+    </el-button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-
+import LoginAccount from './login-account.vue'
+import LoginPhone from './login-phone.vue'
 export default defineComponent({
+  components: {
+    LoginAccount,
+    LoginPhone
+  },
   setup() {
-    return {}
+    const isKeepPassword = ref(true)
+    const accountRef = ref<InstanceType<typeof LoginAccount>>()
+    const handleClick = () => {
+      accountRef.value?.loginAction(isKeepPassword.value)
+    }
+    return {
+      isKeepPassword,
+      handleClick,
+      accountRef
+    }
   }
 })
 </script>
@@ -45,6 +66,17 @@ export default defineComponent({
     height: 20px;
     position: relative;
     top: 4px;
+  }
+
+  .submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .login {
+    width: 100%;
+    margin-top: 10px;
   }
 }
 </style>

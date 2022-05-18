@@ -29,18 +29,18 @@ app.mount('#app')
 //     }
 //   }
 // })
-interface DataType {
-  data: any
-  returnCode: string
-  success: boolean
-}
+// interface DataType {
+//   data: any
+//   returnCode: string
+//   success: boolean
+// }
 
-hyrequest
-  .request<DataType>({
-    url: '/home/multidata',
-    showLoading: false
-  })
-  .then((res) => {
-    console.log(res.data)
-    console.log(res.returnCode)
-  })
+// hyrequest
+//   .request<DataType>({
+//     url: '/home/multidata',
+//     showLoading: false
+//   })
+//   .then((res) => {
+//     console.log(res.data)
+//     console.log(res.returnCode)
+//   })
