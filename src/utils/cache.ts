@@ -1,9 +1,9 @@
 class LocalCache {
-  setCatche(key: string, value: any) {
+  setCache(key: string, value: any) {
     window.localStorage.setItem(key, JSON.stringify(value))
   }
 
-  getCatche(key: string) {
+  getCache(key: string) {
     const value = window.localStorage.getItem(key)
     if (value) {
       return JSON.parse(value)

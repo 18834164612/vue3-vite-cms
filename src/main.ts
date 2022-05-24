@@ -3,6 +3,7 @@ import { registerApp } from './global'
 import hyrequest from './service/index'
 import 'normalize.css'
 import './assets/css/index.less'
+import { setupStore } from './store'
 
 import App from './App.vue'
 import router from './router'
@@ -13,6 +14,8 @@ const app = createApp(App)
 registerApp(app)
 app.use(router)
 app.use(store)
+setupStore()
+
 app.mount('#app')
 
 // hyrequest.request({

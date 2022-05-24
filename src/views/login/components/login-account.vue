@@ -40,8 +40,8 @@ export default defineComponent({
     }
     const formRef = ref<InstanceType<typeof ElForm>>()
     const account = reactive({
-      name: loaclCache.getCatche('name') ?? '',
-      password: loaclCache.getCatche('password') ?? ''
+      name: loaclCache.getCache('name') ?? '',
+      password: loaclCache.getCache('password') ?? ''
     })
     const loginAction = (isKeepPassword: boolean) => {
       formRef.value?.validate((valid) => {
@@ -49,8 +49,8 @@ export default defineComponent({
           //1.判断是否要记住密码
           if (isKeepPassword) {
             //本地缓存
-            loaclCache.setCatche('name', account.name)
-            loaclCache.setCatche('password', account.password)
+            loaclCache.setCache('name', account.name)
+            loaclCache.setCache('password', account.password)
           } else {
             loaclCache.deleteCache('name')
             loaclCache.deleteCache('password')

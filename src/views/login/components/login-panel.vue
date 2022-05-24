@@ -1,8 +1,13 @@
 <template>
   <div class="login-panel">
     <h1 class="title">后台管理系统</h1>
-    <el-tabs type="border-card" :stretch="true" class="demo-tabs">
-      <el-tab-pane>
+    <el-tabs
+      type="border-card"
+      :stretch="true"
+      class="demo-tabs"
+      v-model="currentTab"
+    >
+      <el-tab-pane name="account">
         <template #label>
           <span class="custom-tabs-label">
             <el-icon><Avatar class="icon_style" /></el-icon>
@@ -11,14 +16,14 @@
         </template>
         <login-account ref="accountRef" />
       </el-tab-pane>
-      <el-tab-pane>
+      <el-tab-pane name="phone">
         <template #label>
           <span class="custom-tabs-label">
             <el-icon><PhoneFilled class="icon_style" /></el-icon>
             <span>{{ '手机登录' }}</span>
           </span>
         </template>
-        <login-phone />
+        <login-phone ref="phoneRef" />
       </el-tab-pane>
     </el-tabs>
     <div class="submit">
@@ -43,13 +48,22 @@ export default defineComponent({
   setup() {
     const isKeepPassword = ref(true)
     const accountRef = ref<InstanceType<typeof LoginAccount>>()
+    const phoneRef = ref<InstanceType<typeof LoginPhone>>()
+    const currentTab = ref<string>('account')
+
     const handleClick = () => {
-      accountRef.value?.loginAction(isKeepPassword.value)
+      if (currentTab.value === 'account') {
+        accountRef.value?.loginAction(isKeepPassword.value)
+      } else {
+        console.log(1)
+      }
     }
     return {
       isKeepPassword,
-      handleClick,
-      accountRef
+      currentTab,
+      accountRef,
+      phoneRef,
+      handleClick
     }
   }
 })
