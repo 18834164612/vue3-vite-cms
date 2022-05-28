@@ -3,7 +3,6 @@ import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import {
   ElAlert,
-  ElAside,
   ElButton,
   ElForm,
   ElFormItem,
@@ -14,14 +13,22 @@ import {
   ElTabs,
   ElTabPane,
   ElCheckbox,
-  ElLink
+  ElLink,
+  ElContainer,
+  ElMain,
+  ElAside,
+  ElHeader,
+  ElMenu,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElSubMenu,
+  ElIcon
 } from 'element-plus/lib/components'
 
 const components = [
   ElCol,
   ElAvatar,
   ElAlert,
-  ElAside,
   ElButton,
   ElForm,
   ElFormItem,
@@ -30,7 +37,16 @@ const components = [
   ElTabs,
   ElTabPane,
   ElCheckbox,
-  ElLink
+  ElLink,
+  ElContainer,
+  ElMain,
+  ElAside,
+  ElHeader,
+  ElMenu,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElSubMenu,
+  ElIcon
 ]
 export default function (app: App): void {
   for (const component of components) {
