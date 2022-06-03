@@ -1,0 +1,22 @@
+<template>
+  <div>
+    <h2 class="text">404 Not Found</h2>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  setup() {
+    return {}
+  }
+})
+</script>
+
+<style scoped>
+.text {
+  padding: 0;
+  text-align: center;
+}
+</style>
