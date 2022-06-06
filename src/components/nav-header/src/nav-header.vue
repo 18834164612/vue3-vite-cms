@@ -1,18 +1,28 @@
 <template>
   <div class="nav-header">
-    <el-icon :size="25" v-if="isFold" @click="handleFoldClick">
-      <Expand class="icon_style" />
-    </el-icon>
-    <el-icon :size="25" v-else @click="handleFoldClick">
-      <Fold class="icon_style" />
-    </el-icon>
+    <div>
+      <el-icon :size="30" v-if="isFold" @click="handleFoldClick">
+        <Expand class="icon_style" />
+      </el-icon>
+      <el-icon :size="30" v-else @click="handleFoldClick">
+        <Fold class="icon_style" />
+      </el-icon>
+    </div>
+    <div class="content">
+      <span>{{ 1111 }}</span>
+      <user-info></user-info>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import UserInfo from './user-info.vue'
 
 export default defineComponent({
+  components: {
+    UserInfo
+  },
   emits: ['foldChange'],
   setup(_, { emit }) {
     const isFold = ref(false)
@@ -31,8 +41,20 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .nav-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
   .icon_style {
     cursor: pointer;
+  }
+
+  .content {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
   }
 }
 </style>

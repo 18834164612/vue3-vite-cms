@@ -8,8 +8,6 @@ import {
   ElFormItem,
   ElInput,
   ElRadio,
-  ElCol,
-  ElAvatar,
   ElTabs,
   ElTabPane,
   ElCheckbox,
@@ -22,11 +20,19 @@ import {
   ElMenuItem,
   ElMenuItemGroup,
   ElSubMenu,
-  ElIcon
+  ElIcon,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElAvatar,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker
 } from 'element-plus/lib/components'
 
 const components = [
-  ElCol,
   ElAvatar,
   ElAlert,
   ElButton,
@@ -46,7 +52,15 @@ const components = [
   ElMenuItem,
   ElMenuItemGroup,
   ElSubMenu,
-  ElIcon
+  ElIcon,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker
 ]
 export default function (app: App): void {
   for (const component of components) {

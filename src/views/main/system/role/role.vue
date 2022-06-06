@@ -1,6 +1,6 @@
 <template>
   <div class="user">
-    <h2>role</h2>
+    <div>role</div>
   </div>
 </template>
 

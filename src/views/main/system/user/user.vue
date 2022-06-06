@@ -1,16 +1,25 @@
 <template>
   <div class="user">
-    <h2>user</h2>
+    <div class="search">
+      <hy-form v-bind="formConfig"></hy-form>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import HyForm from '@/base-ui/form'
+import { formConfig } from './config/search.config'
 
 export default defineComponent({
+  components: {
+    HyForm
+  },
   name: 'user',
   setup() {
-    return {}
+    return {
+      formConfig
+    }
   }
 })
 </script>

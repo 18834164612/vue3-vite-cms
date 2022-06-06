@@ -3,7 +3,7 @@ import type { RouteRecordRaw } from 'vue-router'
 export function mapMenusToRoutes(userMenus: any[]): RouteRecordRaw[] {
   const routes: RouteRecordRaw[] = []
 
-  // 1.先去加载默认所以的routes
+  // 1.先去加载默认所有的routes
   const allRoutes: RouteRecordRaw[] = []
   const routeFiles = require.context('../router/main', true, /\.ts/)
   routeFiles.keys().forEach((key) => {
